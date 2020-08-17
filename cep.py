@@ -5,18 +5,26 @@ cep = input('>>')
 
 try:
     endereco = pycep_correios.get_address_from_cep(cep)
-        if endereco['complemento'] == '':
-            print(endereco['logradouro'])
-            print(endereco['bairro'])
-            print(endereco['cidade'])
-            print(endereco['uf'])
-            print(endereco['cep'])
-        else:
-            print(endereco['logradouro'])
-            print(endereco['bairro'])
-            print(endereco['cidade'])
-            print(endereco['complemento'])
-            print(endereco['uf'])
-            print(endereco['cep'])
+    logradouro = endereco['logradouro']
+    bairro = endereco['bairro']
+    cidade = endereco['cidade']
+    uf = endereco['uf']
+    cep = endereco['cep']
+    complemento = endereco['complemento']
+
+    if complemento == "":
+        print(logradouro)
+        print(bairro)
+        print(cidade)
+        print(uf)
+        print(cep)
+    else:
+        print(logradouro)
+        print(bairro)
+        print(cidade)
+        print(complemento)
+        print(uf)
+        print(cep)
+
 except:
     print('search error')
